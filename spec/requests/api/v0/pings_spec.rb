@@ -1,4 +1,3 @@
-require 'rails_helper'
 
 RSpec.describe Api::V0::PingsController, type: :request do
   describe 'GET /v0/pings' do

@@ -4,18 +4,18 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.5.1'
+ruby '3.0.0'
 
 gem 'bootsnap', '>= 1.2', require: false
 gem 'rails', '~> 6.0.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'rack-cors', require: 'rack/cors'
+gem 'devise_token_auth'
 
 group :development, :test do
   gem 'coveralls', require: false
   gem 'pry-rails'
-  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
