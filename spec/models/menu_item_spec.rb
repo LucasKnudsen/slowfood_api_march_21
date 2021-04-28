@@ -1,4 +1,4 @@
-RSpec.describe Position, type: :model do
+RSpec.describe MenuItem, type: :model do
   describe 'db table ' do
     it { is_expected.to have_db_column(:title).of_type(:string) }
     it { is_expected.to have_db_column(:description).of_type(:string) }
@@ -12,7 +12,7 @@ RSpec.describe Position, type: :model do
 
   describe 'factory' do
     it 'expected to have valid factory' do
-      expect(create(:position)).to be_valid
+      expect(create(:menu_item)).to be_valid
     end
   end
 end
