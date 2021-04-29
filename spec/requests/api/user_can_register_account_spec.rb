@@ -9,7 +9,7 @@ RSpec.describe 'POST /api/auth', type: :request do
       }
     end
 
-    it 'is expected to respond with status 201' do
+    it 'is expected to respond with status 200' do
       expect(response).to have_http_status 200
     end
     it 'is expected to have a password' do
