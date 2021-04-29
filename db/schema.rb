@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 2021_04_29_113802) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "email"
+    t.integer "sign_in_count", default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.json "tokens"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
