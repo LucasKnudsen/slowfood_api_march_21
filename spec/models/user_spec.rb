@@ -1,5 +1,13 @@
-require 'rails_helper'
-
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'db table' do
+    it { is_expected.to have_db_column(:email).of_type('string') }
+    it { is_expected.to have_db_column(:password).of_type('string') }
+  end
+
+  describe "has validators" do
+    it {is_expected.to validate_presence_of :email}
+    it {is_expected.to validate_presence_of :password}
+    
+  end
+  
 end
