@@ -23,7 +23,7 @@ RSpec.describe 'POST /api/orders', type: :request do
     end
 
     it 'is expected to return the name of the product in the order' do
-    expect(response_json['order']['title'].first['name']).to eq 'kebab'
+    expect(response_json['order']['title'].first['name']).to eq 'Tikka Masala'
     end
 
 
