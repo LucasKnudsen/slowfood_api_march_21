@@ -9,4 +9,3 @@ RSpec.describe Order, type: :model do
     it { should belong_to(:user) }
   end  
 end
-#pending "add some examples to (or delete) #{__FILE__}"

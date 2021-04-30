@@ -4,16 +4,15 @@ class Api::OrdersController < ApplicationController
     order = current_user.orders.create
     order.order_items.create(menu_item_id: menu_item.id)
     if order.persisted?
-      binding.pry
       render json:{ 
-        message: 'This item was added to your order!'
+        message: 'This item was added to your order!',
         order: { 
-          id: order.id
-         }
-       }
-
+          id: order.id,
+          items: order.menu_items
+        }
+        }, status: 201
     else
-        binding.pry
+      render json: { message: "Something went wrong! Try adding more beans."}, status: 422
     end
   end
 end

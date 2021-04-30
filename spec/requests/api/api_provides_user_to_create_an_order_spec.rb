@@ -6,12 +6,13 @@ RSpec.describe 'POST /api/orders', type: :request do
     before do
       post '/api/orders', 
         params: { 
-          menu_item_id: menu_item.id},
+          menu_item_id: menu_item.id
+        },
         headers: auth_headers
     end
     
     it 'is expected to return a 201 status' do 
-      expect(response_json).to have_http_status 201
+      expect(response).to have_http_status 201
     end
 
     it 'is expected to return a success message' do
@@ -19,13 +20,14 @@ RSpec.describe 'POST /api/orders', type: :request do
     end
 
     it 'is expected to return an array of items' do
-      expect(response_json['order']['title'].count).to eq 1
+      expect(response_json['order']['items'].count).to eq 1
     end
 
     it 'is expected to return the name of the product in the order' do
-    expect(response_json['order']['title'].first['name']).to eq 'Tikka Masala'
+    expect(response_json['order']['items'].first['title']).to eq 'Tikka Masala'
     end
-
-
   end
 end
+
+
+# Add sad path!
