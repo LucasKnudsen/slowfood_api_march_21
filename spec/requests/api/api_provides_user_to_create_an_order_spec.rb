@@ -28,6 +28,3 @@ RSpec.describe 'POST /api/orders', type: :request do
     end
   end
 end
-
-
-# Add sad path!

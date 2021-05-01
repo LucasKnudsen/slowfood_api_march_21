@@ -12,7 +12,7 @@ class Api::OrdersController < ApplicationController
         }
         }, status: 201
     else
-      render json: { message: "Something went wrong! Try adding more beans."}, status: 422
+      render json: { message: "Something went wrong! "}, status: 422
     end
   end
 end
