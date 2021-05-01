@@ -14,5 +14,11 @@ RSpec.describe 'GET /api/orders/:id' do
     it 'is expected to return a 200 status' do
       expect(response).to have_http_status 200
     end
-end
+    it 'is expected to return specfic order number ' do
+      expect(response_json['order']['id']).to eq order.id
+    end
+    it 'is expected to return specfic user ID' do
+      expect(response_json['order']['user_id']).to eq user.id
+    end
+  end
 end

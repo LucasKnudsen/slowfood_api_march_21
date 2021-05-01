@@ -19,9 +19,7 @@ class Api::OrdersController < ApplicationController
     render json: { order: order }
   end
 
-  def index
-    
-  end
+
   private
 
   def order_response(resource, order, status)
