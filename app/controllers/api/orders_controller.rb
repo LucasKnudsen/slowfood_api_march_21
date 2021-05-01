@@ -25,7 +25,7 @@ class Api::OrdersController < ApplicationController
            }  
         },status: status
       else
-        render json: { message: "Something went wrong! "}, status: 422
+        render json: { message: "Unauthorised action"}, status: 401
       end
   end
 end

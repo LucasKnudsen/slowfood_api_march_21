@@ -3,4 +3,5 @@ class Api::MenuItemsController < ApplicationController
     menu_items = MenuItem.all
     render json: { menu_items: menu_items }
   end
+  
 end
