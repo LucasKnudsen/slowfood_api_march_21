@@ -6,7 +6,7 @@ RSpec.describe 'PUT /api/orders/:id' do
   let(:menu_item_to_order) {create(:menu_item, title: "Tikka Masala")}
   describe 'successfully with valid  params' do
     before do
-      order.order_items.create(menu_item: ordered_menu_item.id)
+      order.order_items.create(menu_item_id: ordered_menu_item.id)
       put "/api/orders/#{order.id}",
       params: {menu_item_id: menu_item_to_order.id},
       headers: auth_headers
@@ -22,7 +22,5 @@ RSpec.describe 'PUT /api/orders/:id' do
   it 'is expected to be a Tikka Massala in the order' do
     expect(response_json['order']['items'].second['title']).to eq "Tikka Masala"
   end
-  end
-  def update
   end
 end
