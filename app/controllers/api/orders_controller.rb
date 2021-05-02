@@ -21,6 +21,7 @@ class Api::OrdersController < ApplicationController
   end
 end
   def show
+    binding.pry
     order = Order.find{params[:id]}
     render json: { order: order }
   end
