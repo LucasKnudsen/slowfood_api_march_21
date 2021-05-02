@@ -12,7 +12,7 @@ class Api::OrdersController < ApplicationController
     if params['finalized']
       order.update(finalized: true)
       render json: { 
-        message: 'Your order will be able to pick up in 30 minutes!'
+        message: 'Your will  be able to pick up your order in 30 minutes!'
        }
       else
       menu_item = MenuItem.find(params['menu_item_id']) if params['menu_item_id']
