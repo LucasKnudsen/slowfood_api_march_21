@@ -20,6 +20,7 @@ RSpec.describe 'PUT /api/orders/:id' do
     end
 
     it 'is expected to be a Tikka Massala in the order' do
+      
       expect(response_json['order']['items'].second['title']).to eq 'Tikka Masala'
     end
   end

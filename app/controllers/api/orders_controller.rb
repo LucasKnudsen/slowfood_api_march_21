@@ -18,10 +18,11 @@ class Api::OrdersController < ApplicationController
       menu_item = MenuItem.find(params['menu_item_id']) if params['menu_item_id']
       new_item = order.order_items.create(menu_item_id: menu_item.id)
     order_response(new_item, order, 200)
+    
   end
 end
   def show
-    binding.pry
+    
     order = Order.find{params[:id]}
     render json: { order: order }
   end
@@ -29,6 +30,7 @@ end
   private
 
   def order_response(resource, order, status)
+    
     if resource.persisted?
         render json: { message: 'This item was added to your order!',
           order: { 
