@@ -17,7 +17,7 @@ RSpec.describe 'PUT /api/orders/:id', type: :request do
     end
 
     it 'is expected to return a success message' do
-      expect(response_json['message']).to eq 'Your order will be able to pick up in 30 minutes!'
+      expect(response_json['message']).to eq 'Your will  be able to pick up your order in 30 minutes!'
     end
     it 'is expected to update the order to be finalized' do 
       expect(order.reload.finalized?).to eq true
