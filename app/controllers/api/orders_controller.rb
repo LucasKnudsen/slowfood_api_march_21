@@ -14,6 +14,12 @@ class Api::OrdersController < ApplicationController
     order_response(new_item, order, 200)
   end
 
+  def show
+    order = Order.find{params[:id]}
+    render json: { order: order }
+  end
+
+
   private
 
   def order_response(resource, order, status)
