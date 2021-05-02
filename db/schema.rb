@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_164304) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "finalized", default: false
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
