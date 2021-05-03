@@ -26,7 +26,7 @@ class Api::OrdersController < ApplicationController
 
   def show
     order = Order.find(params[:id])
-    render json: { order: {id: order.id, menu_items: order.menu_items} } 
+    render json: { order: {id: order.id, user_id: order.user_id, menu_items: order.menu_items} }  
   end
 
   private
